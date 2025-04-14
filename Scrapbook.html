@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Scrapbook</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #e0eafc);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      color: #2b2d42;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .book {
+      position: relative;
+      width: 60%;
+      max-width: 600px;
+      height: 500px;
+      perspective: 2000px;
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transform-origin: left;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      overflow-y: auto;
+      backface-visibility: hidden;
+      cursor: pointer;
+    }
+
+    .page-content {
+      color: #333;
+    }
+
+    .page h2 {
+      margin-top: 0;
+      color: #185a9d;
+    }
+
+    /* Flipping logic */
+    .flipped {
+      transform: rotateY(180deg);
+      z-index: 10;
+    }
+
+    .media img,
+    .media video,
+    .media audio {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+
+    .button-link {
+      display: inline;
+      background: #ff6f61;
+      color: white;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: background 0.3s;
+      
+    }
+
+    .button-link:hover {
+      background: #ff3b2e;
+    }
+
+    .navigation {
+      margin-top: 50px;
+      text-align: center;
+      z-index: 20;
+    }
+
+    .nav-btn {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      margin: 0 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .nav-btn:hover {
+      background: #1a4fb4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📓 My Personal Scrapbook Journal</h1>
+  </header>
+
+  <div class="book" id="book">
+
+    <div class="page pg0">
+        <div class="page-content">
+          <h2>My Personal Scrapbook Journal</h2>
+          <p>Staying active at the gym helped me gain confidence and discipline. I’m working toward a stronger, healthier version of me, balancing fitness and rest.</p>
+          <div class='media'><img src='https://source.unsplash.com/300x200/?gym,fitness' alt='Workout'></div>
+        </div>
+      </div>
+    <div class="page pg1">
+      <div class="page-content">
+        <h2>👤 About Me</h2>
+        <p><strong>Who I Am:</strong> Hello, my name is DJ D. MONTANO, a student from BSIT 1-10 at Pamantasan ng Lungsod ng Valenzuela. I’m 20 years old, and I have a passion for technology, food, and sports. I’m the eldest son in a family with four siblings, which has taught me the value of responsibility, leadership, and teamwork. My interests range from IT-related activities to playing basketball, and I love discovering new things.</p>
+        <p><strong>My Journey So Far:</strong> My journey has been shaped by my constant pursuit of knowledge and personal development. As an ICT student at Electron College of Technical Education, I learned the basics of IT, but my current studies in IT at PLV have deepened my understanding of the field. Along the way, I’ve encountered challenges that tested my resilience, from balancing schoolwork with family responsibilities to managing personal growth while juggling multiple interests. These experiences have made me who I am today—focused, determined, and always eager to improve.</p>
+        <p><strong>How I See Myself:</strong> I see myself as a determined individual with a passion for technology and growth. My strengths lie in my curiosity and adaptability—qualities that help me learn quickly and embrace new ideas. However, I recognize my weaknesses, such as occasional self-doubt and impatience. These are areas I’m working on improving as I strive to be a better version of myself. My aspirations are to become proficient in IT, manage my own business, and contribute to my community in meaningful ways.</p>
+        <p><strong>Why I Chose This Platform:</strong> I decided to build my scrapbook using HTML, CSS, and a bit of JavaScript because I find the process of designing and coding rewarding. These technologies allow me to express my creativity while strengthening my IT skills. As a student pursuing a career in IT, this project offers a hands-on opportunity to apply what I’ve learned and develop something that’s uniquely mine. The platform I chose reflects my interests in technology and design, providing a canvas for my ideas and self-expression.</p>
+      </div>
+    </div>
+    <div class="page pg2">
+      <div class="page-content">
+        <h2>💪 Physical Self</h2>
+        <p>Staying active at the gym helped me gain confidence and discipline. I’m working toward a stronger, healthier version of me, balancing fitness and rest.</p>
+        <div class='media'><img src='https://source.unsplash.com/300x200/?gym,fitness' alt='Workout'></div>
+      </div>
+    </div>
+    <div class="page pg3">
+      <div class="page-content">
+        <h2>🧑‍🤝‍🧑 Social Self</h2>
+        <p>My relationships define a big part of me. I enjoy being a kuya, a friend, and a teammate. I value loyalty and meaningful conversations.</p>
+        <div class='media'><video controls src='https://www.w3schools.com/html/mov_bbb.mp4'></video></div>
+      </div>
+    </div>
+    <div class="page pg4">
+      <div class="page-content">
+        <h2>🕊️ Spiritual Self</h2>
+        <p>I believe in purpose and staying grounded. My values include kindness, faith, and integrity. I try to live intentionally each day.</p>
+        <div class='media'><audio controls><source src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' type='audio/mpeg'></audio></div>
+      </div>
+    </div>
+    <div class="page pg5">
+      <div class="page-content">
+        <h2>🌐 Digital Self</h2>
+        <p>Online, I explore creativity and share ideas. I maintain a positive presence on my YouTube channel and use tech responsibly.</p>
+        <a class='button-link' href='https://youtube.com/@LimitlessGrowthLab' target='_blank'>Visit My Channel</a>
+      </div>
+    </div>
+    <div class="page pg6">
+      <div class="page-content">
+        <h2>🚀 Future Self</h2>
+        <p>I dream of becoming a cybersecurity expert. I want to build platforms that are both useful and secure. My goal is to grow every day.</p>
+      </div>
+    </div>
+    <div class="page pg7">
+      <div class="page-content">
+        <h2>🔍 Conclusion</h2>
+        <p> This course and project have allowed me to delve deeply into understanding "The Self." Through the process of reflection and digital creation, I’ve been able to examine various aspects of my identity—from my physical well-being to my aspirations for the future. Working with HTML, CSS, and JavaScript has not only enhanced my technical skills but also provided a creative outlet to express my journey and self-perception. This experience has helped me see how technology and introspection can come together to shape a deeper understanding of who I am and where I’m headed. Thank you!</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="navigation">
+    <button class="nav-btn" onclick="prevPage()">⬅ Previous</button>
+    <button class="nav-btn" onclick="nextPage()">Next ➡</button>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    function updatePages() {
+      pages.forEach((page, index) => {
+        // Check if the page is the current one
+        if (index > currentPage) {
+          page.classList.add('flipped');
+        } else {
+          page.classList.remove('flipped');
+        }
+      });
+    }
+
+    function nextPage() {
+      if (currentPage < pages.length) {
+        currentPage++;
+        updatePages();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        updatePages();
+      }
+    }
+
+    updatePages(); // Initialize the first page as flipped
+  </script>
+</body>
+</html>
